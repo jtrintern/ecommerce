@@ -4,6 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Role;
+use App\Models\User;
+
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +23,20 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $userOne = User::create([
+            'firstName' => 'Dzaki',
+            'lastName' => 'Ahmad',
+            'email' => 'dzakiaf19@gmail.com',
+            'phone' => '82331038689',
+            'address' => 'Banyuwangi',
+            'birthdate' => '2002-06-19',
+            'email_verified_at' => now(),
+            'password' => Hash::make('qwerty12345'), // password
+            'remember_token' => Str::random(10),
+        ]);
+
+        Role::create(['name' => 'admin']);
+
+        $userOne->assignRole('admin');
     }
 }
