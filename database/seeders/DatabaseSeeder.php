@@ -34,9 +34,23 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('qwerty12345'), // password
             'remember_token' => Str::random(10),
         ]);
+        
+        $userTwo = User::create([
+            'firstName' => 'dsda',
+            'lastName' => 'dasdas',
+            'email' => 'bebek@gmail.com',
+            'phone' => '82331038672',
+            'address' => 'Banyuwangi',
+            'birthdate' => '2002-06-19',
+            'email_verified_at' => now(),
+            'password' => Hash::make('qwerty12345'), // password
+            'remember_token' => Str::random(10),
+        ]);
 
         Role::create(['name' => 'admin']);
+        Role::create(['name' => 'user']);
 
         $userOne->assignRole('admin');
+        $userTwo->assignRole('user');
     }
 }
