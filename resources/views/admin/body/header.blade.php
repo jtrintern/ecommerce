@@ -127,7 +127,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <!-- <i class="fa fa-bell cursor-pointer"></i> -->
                         <div class="my-auto">
-                            <span class="d-sm-inline d-none pe-2 px-2">Ayu Wulandari</span>
+                            <span class="d-sm-inline d-none pe-2 px-2">{{ Auth::user()->firstName . ' ' . Auth::user()->lastName }}</span>
                             <img src="{{ asset('admin/assets/img/team-2.jpg') }}" class="avatar avatar-sm">
                         </div>
                     </a>
@@ -142,18 +142,20 @@
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="text-sm font-weight-normal mb-1">
-                                            <span class="font-weight-bold">Ayu Wulandari</span>
+                                            <span class="font-weight-bold">{{ Auth::user()->firstName . ' ' . Auth::user()->lastName }}</span>
                                         </h6>
-                                        <p class="text-xs text-secondary mb-0">
-                                            Admin
-                                        </p>
+                                        @foreach (auth()->user()->getRoleNames() as $role)
+                                        <span class="text-xs text-secondary mb-0">
+                                        {{ $role }}
+                                        </span>
+                                        @endforeach
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li class="mb-2">
                             <a class="dropdown-item border-radius-md" href="javascript:;">
-                                <div class="d-flex py-1">
+                                <div class="d-flex">
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="text-sm font-weight-normal mb-1">Account Settings
                                         </h6>
@@ -163,13 +165,13 @@
                         </li>
                         <li>
                             <a class="dropdown-item border-radius-md" href="javascript:;">
-                                <div class="d-flex py-1">
+                                <div class="d-flex">
                                     <div class="d-flex flex-column justify-content-center">
                                         <form method="POST" action="{{ route('logout') }}" x-data>
                                             @csrf
 
                                             <button href="{{ route('logout') }}"
-                                                @click.prevent="$root.submit();">
+                                                @click.prevent="$root.submit();" style="border:none; background:transparent; padding:0;">
                                                 {{ __('Log Out') }}
                                             </button>
                                         </form>
