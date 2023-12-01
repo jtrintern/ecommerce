@@ -70,5 +70,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category->delete();
+        return redirect('admin/category')->with(['success' => 'Category data deleted successfully']);
     }
 }

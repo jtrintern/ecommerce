@@ -87,7 +87,9 @@
                                                                     </button>
                                                                 </div>
 
-                                                                <form action="{{route('editCategory', ['category' => $cat])}}" method="post">
+                                                                <form
+                                                                    action="{{ route('editCategory', ['category' => $cat]) }}"
+                                                                    method="post">
                                                                     @csrf
                                                                     @if ($errors->any())
                                                                         <div class="alert alert-danger">
@@ -99,13 +101,13 @@
                                                                         </div>
                                                                     @endif
                                                                     <div class="modal-body">
-                                                                                <div class="form-group">
-                                                                                    <input name="name" type="text"
-                                                                                        class="form-control"
-                                                                                        id="exampleFormControlInput1"
-                                                                                        placeholder="Category Name"
-                                                                                        value="{{$cat->name}}">
-                                                                                </div>
+                                                                        <div class="form-group">
+                                                                            <input name="name" type="text"
+                                                                                class="form-control"
+                                                                                id="exampleFormControlInput1"
+                                                                                placeholder="Category Name"
+                                                                                value="{{ $cat->name }}">
+                                                                        </div>
                                                                     </div>
 
 
@@ -122,9 +124,34 @@
 
                                                     <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#DD322B; color:#fff;padding: 10px 15px;"
-                                                        data-original-title="" title="">
+                                                        data-toggle="modal" data-target="#deleteModal">
                                                         <i class="fa-regular fa-trash-can"></i>
                                                     </button>
+
+                                                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                                                        aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="deleteModalLabel">Delete
+                                                                        Category
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Are you sure?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <a href="{{route('deleteCategory', ['category'=> $cat])}}"
+                                                                        class="btn btn-danger">Delete</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                 </td>
                                             </tr>
                                         @endforeach
