@@ -69,12 +69,12 @@
                                                 <td class="text-sm">
                                                     <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#FFC93F; color:#fff; padding: 10px 15px;"
-                                                        data-toggle="modal" data-target="#editModal">
+                                                        data-toggle="modal" data-target="#editModal{{$cat->id}}">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </button>
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+                                                    <div class="modal fade" id="editModal{{$cat->id}}" tabindex="-1" role="dialog"
                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
@@ -124,11 +124,11 @@
 
                                                     <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#DD322B; color:#fff;padding: 10px 15px;"
-                                                        data-toggle="modal" data-target="#deleteModal">
+                                                        data-toggle="modal" data-target="#deleteModal{{$cat->id}}">
                                                         <i class="fa-regular fa-trash-can"></i>
                                                     </button>
 
-                                                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                                                    <div class="modal fade" id="deleteModal{{$cat->id}}" tabindex="-1" role="dialog"
                                                         aria-labelledby="deleteModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
