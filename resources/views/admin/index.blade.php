@@ -129,7 +129,7 @@
                             </td>
                         </tr>
                         <tr class="text-center">
-                            <td>1</td>
+                            <td>2</td>
                             <td>The Armored Helicopter</td>
                             <td>2</td>
                             <td>Rp 59.500</td>

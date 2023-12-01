@@ -3,7 +3,7 @@
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
+        <a class="navbar-brand m-0" href="{{route ('admin.dashboard')}}"
             target="_blank">
             <img src="{{ asset('admin/assets/img/logo.png') }}" class="navbar-brand-img h-100"
                 alt="main_logo">
@@ -19,13 +19,13 @@
                     href="{{ route ('admin.dashboard') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-tv-2 text-warning text-sm opacity-10"></i>
+                        <i class="ni ni-tv-2 text-dark text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (request()->is('admin/product')) active @endif"
+                <a class="nav-link @if (request()->is('admin/product', 'admin/product/add')) active @endif"
                     href="{{ route ('admin.product') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -33,21 +33,23 @@
                     </div>
                     <span class="nav-link-text ms-1">Product</span>
                 </a>
-            </li><li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link @if (request()->is('admin/category')) active @endif"
                     href="{{ route ('indexCategory') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-book text-danger text-sm opacity-10"></i>
+                        <i class="fas fa-book text-dark text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Category</span>
                 </a>
-            </li><li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link @if (request()->is('admin/orders')) active @endif"
                     href="{{ route ('admin.orders') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-money-bill text-warning text-sm opacity-10"></i>
+                        <i class="fa-solid fa-money-bill text-dark text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Orders</span>
                 </a>
@@ -68,8 +70,11 @@
             </li> -->
         </ul>
     </div>
-    <div class="sidenav-footer mt-auto pt-9 mx-3">
-        <a class="btn btn-sm mb-0 w-100" style="background: #24263D; color: #fff"
-            href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Log out</a>
-    </div>
+    <form method="POST" action="{{ route('logout') }}" x-data>
+        @csrf
+        <div class="sidenav-footer mt-auto pt-9 mx-3">
+            <button class="btn btn-sm mb-0 w-100" style="background: #24263D; color: #fff" type="submit">Log
+                out</button>
+        </div>
+    </form>
 </aside>

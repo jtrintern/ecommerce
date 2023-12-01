@@ -23,7 +23,7 @@
                                 <div class="col-lg-10">
                                     <div class="form-group">
                                         <input name="name" type="text" class="form-control"
-                                            id="exampleFormControlInput1" placeholder="Category Name">
+                                            id="exampleFormControlInput1" placeholder="Add Category Name">
                                     </div>
                                 </div>
                                 <div class="col-lg-2">

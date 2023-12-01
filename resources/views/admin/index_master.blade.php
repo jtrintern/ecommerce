@@ -68,7 +68,6 @@
             opacity: 1;
             max-height: 200px;
         } */
-
     </style>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -187,7 +186,7 @@
         }
 
     </script>
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             function handleDropdownClick(event) {
                 const dropdownMenu = event.currentTarget.querySelector(".dropdown-menu-sidenav");
@@ -196,7 +195,7 @@
                     dropdownMenu.style.maxHeight = "0";
                     setTimeout(() => {
                         dropdownMenu.classList.remove("show");
-                    }, 300); // Sesuaikan dengan durasi transisi CSS (dalam milidetik)
+                    }, 300);
                 } else {
                     const allDropdowns = document.querySelectorAll(".dropdown-menu-sidenav");
                     allDropdowns.forEach(function (dropdown) {
@@ -223,12 +222,12 @@
                     dropdown.style.maxHeight = "0";
                     setTimeout(() => {
                         dropdown.classList.remove("show");
-                    }, 300); // Sesuaikan dengan durasi transisi CSS (dalam milidetik)
+                    }, 300);
                 });
             });
         });
 
-    </script>
+    </script> -->
 
     <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
 
