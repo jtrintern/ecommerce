@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\CategoryRequest;
+
 class CategoryController extends Controller
 {
     /**
@@ -13,6 +15,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        $category = Category::all()->reverse();
+        return view('admin.page.show_category', compact('category'));
     }
 
     /**
@@ -26,9 +30,12 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         //
+        Category::create($request->all());
+
+        return redirect('admin/category')->with(['success' => 'Category data create successfully']);
     }
 
     /**
@@ -50,9 +57,11 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
         //
+        $category->update($request->all());
+        return redirect('admin/category')->with(['success' => 'Category data updated successfully']);
     }
 
     /**
@@ -61,5 +70,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category->delete();
+        return redirect('admin/category')->with(['success' => 'Category data deleted successfully']);
     }
 }
