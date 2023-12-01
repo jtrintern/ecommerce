@@ -7,7 +7,9 @@
                 <div class="card mb-4">
                     <div class="card-header pb-0 font-weight-bolder d-flex justify-content-between">
                         <h6>All Products</h6>
-                        <button type="button button-add" class="btn btn-primary"
+                        <button type="button button-add"
+                            onclick="location.href='{{ route ('admin.add.product') }}'"
+                            class="btn btn-primary"
                             style="background:transparent; border: 1px solid #24263D; color: #24263D;">Add
                             Products</button>
                     </div>

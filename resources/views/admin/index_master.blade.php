@@ -39,28 +39,24 @@
     <link id="pagestyle" href="{{asset ('admin/assets/css/argon-dashboard.css?v=2.0.4')}}" rel="stylesheet" />
     <style>
         /* Gaya untuk dropdown */
-        .dropdown-menu-sidenav {
+        /* .dropdown-menu-sidenav {
             display: none;
-            /* position: absolute; */
             background-color: #fff;
             border-color: #5e72e4;
             border: 1px solid;
             border-radius: 6px;
             min-width: 100px;
-            /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
             z-index: 1;
             opacity: 0;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, opacity 0.3s ease;
             margin: 0 34px;
-            /* list-style: none; */
             font-size: 0.875rem;
         }
 
         .dropdown-menu-sidenav li {
             margin: 10px 0 10px 0;
-            /* padding: 5px 0; */
         }
 
         .dropdown-menu-sidenav li:hover {
@@ -71,8 +67,7 @@
             display: block;
             opacity: 1;
             max-height: 200px;
-            /* Atur ketinggian maksimal yang diinginkan */
-        }
+        } */
 
     </style>
 </head>

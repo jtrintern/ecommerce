@@ -24,11 +24,15 @@ Route::group(['middleware' => ['role:admin', 'auth', 'verified'], 'prefix' => 'a
 
     Route::get('/product', function () {
         return view('admin.page.show_product');
-    })->name('index_Product');
+    })->name('admin.product');
 
     Route::get('/category', function () {
         return view('admin.page.show_category');
-    })->name('index_Category');
+    })->name('admin.category');
+
+    Route::get('/product/add', function () {
+        return view('admin.page.add_product');
+    })->name('admin.add.product');
 });
 
 Route::group(['middleware' => ['role:user', 'auth', 'verified']], function () {
