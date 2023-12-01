@@ -33,6 +33,10 @@ Route::group(['middleware' => ['role:admin', 'auth', 'verified'], 'prefix' => 'a
     Route::get('/product/add', function () {
         return view('admin.page.add_product');
     })->name('admin.add.product');
+
+    Route::get('/orders', function () {
+        return view('admin.page.orders');
+    })->name('admin.orders');
 });
 
 Route::group(['middleware' => ['role:user', 'auth', 'verified']], function () {
