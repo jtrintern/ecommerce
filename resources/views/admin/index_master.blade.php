@@ -68,7 +68,6 @@
             opacity: 1;
             max-height: 200px;
         } */
-
     </style>
 </head>
 
@@ -184,7 +183,7 @@
         }
 
     </script>
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             function handleDropdownClick(event) {
                 const dropdownMenu = event.currentTarget.querySelector(".dropdown-menu-sidenav");
@@ -193,7 +192,7 @@
                     dropdownMenu.style.maxHeight = "0";
                     setTimeout(() => {
                         dropdownMenu.classList.remove("show");
-                    }, 300); // Sesuaikan dengan durasi transisi CSS (dalam milidetik)
+                    }, 300);
                 } else {
                     const allDropdowns = document.querySelectorAll(".dropdown-menu-sidenav");
                     allDropdowns.forEach(function (dropdown) {
@@ -220,12 +219,12 @@
                     dropdown.style.maxHeight = "0";
                     setTimeout(() => {
                         dropdown.classList.remove("show");
-                    }, 300); // Sesuaikan dengan durasi transisi CSS (dalam milidetik)
+                    }, 300);
                 });
             });
         });
 
-    </script>
+    </script> -->
 
     <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
 

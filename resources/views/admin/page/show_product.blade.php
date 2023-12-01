@@ -10,7 +10,7 @@
                         <button type="button button-add"
                             onclick="location.href='{{ route ('admin.add.product') }}'"
                             class="btn btn-primary"
-                            style="background:transparent; border: 1px solid #24263D; color: #24263D;">Add
+                            style="background: #344767; border: 1px solid #24263D; color: #FFFDF4; shadow: none;">Add
                             Products</button>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">

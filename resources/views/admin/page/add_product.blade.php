@@ -51,8 +51,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12 mt-2">
-                                    <div class="form-group">
-                                        <input type="file" id="fileUpload" name="images[]" multiple accept="image/*">
+                                    <div class="form-group" style="border:1px solid #717E95; border-style: dashed; padding: 20px">
+                                        <input style="width: 100%;" type="file" id="fileUpload" name="images[]" multiple accept="image/*">
                                     </div>
                                 </div>
                             </div>

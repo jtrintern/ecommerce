@@ -12,7 +12,7 @@
                         <div class="col-lg-10">
                             <div class="form-group">
                                 <input type="email" class="form-control" id="exampleFormControlInput1"
-                                    placeholder="Category Name">
+                                    placeholder="Add Category Name">
                             </div>
                         </div>
                         <div class="col-lg-2">
