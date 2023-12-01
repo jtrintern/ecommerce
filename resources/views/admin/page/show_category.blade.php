@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="card-body px-1 pt-0 pb-2">
+                        <div class="card-body px-1 pt-0 pb-2 mb-2">
                             <div class="table-responsive p-0">
                                 <table class="table align-items-center mb-0">
                                     <thead>
@@ -136,7 +136,7 @@
                                                                     <h5 class="modal-title" id="deleteModalLabel">Delete
                                                                         Category
                                                                     </h5>
-                                                                    <button type="button" class="close"
+                                                                    <button type="button" class="close" style="border:none; font-size:24px; background: transparent;"
                                                                         data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
@@ -148,7 +148,7 @@
                                                                     <button type="button" class="btn btn-secondary"
                                                                         data-dismiss="modal">Close</button>
                                                                     <a href="{{route('deleteCategory', ['category'=> $cat])}}"
-                                                                        class="btn btn-danger">Delete</a>
+                                                                        class="btn" style="background: #DD322B; color: #fff;">Delete</a>
                                                                 </div>
                                                             </div>
                                                         </div>
