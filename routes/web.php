@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,10 @@ Route::group(['middleware' => ['role:admin', 'auth', 'verified'], 'prefix' => 'a
         return view('admin.page.show_product');
     })->name('admin.product');
 
-    Route::get('/category', function () {
-        return view('admin.page.show_category');
-    })->name('admin.category');
+    Route::get('/category', [CategoryController::class , 'index'])->name('indexCategory');
+    Route::post('/storeCategory', [CategoryController::class , 'store'])->name('storeCategory');
+    Route::get('/deleteCategory/{category}', [CategoryController::class , 'destroy'])->name('deleteCategory');
+    Route::post('/editCategory/{category}', [CategoryController::class , 'update'])->name('editCategory');
 
     Route::get('/product/add', function () {
         return view('admin.page.add_product');
