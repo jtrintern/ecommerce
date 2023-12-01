@@ -88,16 +88,16 @@
 
         .add-image .button {
             display: inline-block;
-            /* padding: .5em 1em; */
+            padding: 0 1em .5em 0;
             /* background: black; */
             cursor: pointer;
             /* border-radius: 5px; */
             /* border: 1px solid darkslateblue; */
             color: #344767;
             transition: .4s;
-            /* width: 100%;
-            height: 70px; */
-            margin-bottom: 40px;
+            width: 100%;
+            height: 70px;
+            /* margin-bottom: 40px; */
         }
 
         /* .add-image .button:hover {
@@ -139,10 +139,46 @@
             font-size: .7em;
         }
 
+
+        /* Untuk icon silang up image */
+        /* CSS untuk icon close */
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 100%;
+            cursor: pointer;
+            padding: 8px;
+            line-height: 1;
+            display: none;
+            font-size:24px;
+        }
+
+        .image-container:hover .close-icon {
+            display: block;
+        }
+
     </style>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -343,24 +379,31 @@
             if (file.type.match(imageType)) {
                 let fReader = new FileReader();
                 let gallery = document.getElementById('gallery');
-                // reads the contents of the specified Blob. the result attribute of this
-                // with hold a data: URL representing the file's data
+
                 fReader.readAsDataURL(file);
-                // handler for the loadend event, triggered when the reading operation is
-                // completed (whether success or failure)
                 fReader.onloadend = function () {
                     let wrap = document.createElement('div');
+                    wrap.classList.add('image-container');
+
                     let img = document.createElement('img');
-                    // set the img src attribute to the file's contents (from read operation)
                     img.src = fReader.result;
+
+                    let closeIcon = document.createElement('span');
+                    closeIcon.classList.add('close-icon');
+                    closeIcon.innerHTML = '&times;';
+                    closeIcon.addEventListener('click', function () {
+                        gallery.removeChild(wrap);
+                    });
+
                     let imgCapt = document.createElement('p');
-                    // the name prop of the file contains the file name, and the size prop
-                    // the file size. convert bytes to KB for the file size
                     let fSize = (file.size / 1000) + ' KB';
                     imgCapt.innerHTML =
                         `<span class="fName">${file.name}</span><span class="fSize">${fSize}</span><span class="fType">${file.type}</span>`;
-                    gallery.appendChild(wrap).appendChild(img);
-                    gallery.appendChild(wrap).appendChild(imgCapt);
+
+                    wrap.appendChild(img);
+                    wrap.appendChild(closeIcon);
+                    wrap.appendChild(imgCapt);
+                    gallery.appendChild(wrap);
                 }
             } else {
                 console.error("Only images are allowed!", file);

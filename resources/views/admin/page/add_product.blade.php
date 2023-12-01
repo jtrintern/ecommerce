@@ -59,8 +59,9 @@
                                 </div>
                             </div> -->
                             <div class="row">
-                                <div class="col-md-12 mt-2 mb-3 add-image"
-                                    onclick="document.getElementById('imgUpload').click()" style="cursor: pointer;">
+                                <!-- <div class="col-md-12 mt-2 mb-3 add-image"
+                                    onclick="document.getElementById('imgUpload').click()" style="cursor: pointer;"> -->
+                                <div class="col-md-12 mt-2 mb-3 add-image">
                                     <div id="dropBox" class="form-group"
                                         style="border:1px solid #717E95; border-radius: 10px; border-style: dashed; padding: 20px 20px 0; margin:0;">
                                         <input type="file" id="imgUpload" multiple accept="image/*"
