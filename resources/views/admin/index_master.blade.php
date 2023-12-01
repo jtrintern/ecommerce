@@ -26,17 +26,19 @@
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
-    <link href="{{asset ('admin/assets/css/nucleo-icons.css')}}" rel="stylesheet" />
+    <link href="{{ asset ('admin/assets/css/nucleo-icons.css') }}" rel="stylesheet" />
     <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <link href="{{asset ('admin/assets/css/nucleo-svg.css')}}" rel="stylesheet" />
+    <link href="{{ asset ('admin/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="...">
 
     <!-- CSS Files -->
-    <link id="pagestyle" href="{{asset ('admin/assets/css/argon-dashboard.css?v=2.0.4')}}" rel="stylesheet" />
+    <link id="pagestyle"
+        href="{{ asset ('admin/assets/css/argon-dashboard.css?v=2.0.4') }}"
+        rel="stylesheet" />
     <style>
         /* Gaya untuk dropdown */
         /* .dropdown-menu-sidenav {
@@ -68,6 +70,75 @@
             opacity: 1;
             max-height: 200px;
         } */
+        /* #dropBox {
+            min-width: 400px;
+            max-width: 75%;
+            min-height: 300px;
+            border: 3px dashed black;
+            text-align: center;
+            background: lightgrey;
+            padding: 3em;
+            margin: auto;
+        }
+
+        #dropBox.hover {
+            border-color: darkslateblue;
+            background: aliceblue;
+        } */
+
+        .add-image .button {
+            display: inline-block;
+            /* padding: .5em 1em; */
+            /* background: black; */
+            cursor: pointer;
+            /* border-radius: 5px; */
+            /* border: 1px solid darkslateblue; */
+            color: #344767;
+            transition: .4s;
+            /* width: 100%;
+            height: 70px; */
+            margin-bottom: 40px;
+        }
+
+        /* .add-image .button:hover {
+            background: darkslateblue;
+        } */
+
+        .add-image #imgUpload {
+            display: none;
+        }
+
+        .add-image #gallery {
+            text-align: center;
+            margin-top: 1.5em;
+        }
+
+        .add-image #gallery div {
+            display: inline-block;
+            margin: .5em 1em;
+        }
+
+        .add-image #gallery img {
+            max-height: 100px;
+        }
+
+        .add-image #gallery .fName,
+        .add-image #gallery .fSize {
+            display: block;
+        }
+
+        .add-image #gallery .fName {
+            color: brown;
+        }
+
+        .add-image #gallery .fSize {
+            font-size: .8em;
+        }
+
+        .add-image #gallery .fType {
+            font-size: .7em;
+        }
+
     </style>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -87,11 +158,11 @@
         </div>
     </main>
     <!--   Core JS Files   -->
-    <script src="{{asset ('admin/assets/js/core/popper.min.js')}}"></script>
-    <script src="{{asset ('admin/assets/js/core/bootstrap.min.js')}}"></script>
-    <script src="{{asset ('admin/assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset ('admin/assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
-    <script src="{{asset ('admin/assets/js/plugins/chartjs.min.js')}}"></script>
+    <script src="{{ asset ('admin/assets/js/core/popper.min.js') }}"></script>
+    <script src="{{ asset ('admin/assets/js/core/bootstrap.min.js') }}"></script>
+    <script src="{{ asset ('admin/assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset ('admin/assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
+    <script src="{{ asset ('admin/assets/js/plugins/chartjs.min.js') }}"></script>
     <script>
         var ctx1 = document.getElementById("chart-line").getContext("2d");
 
@@ -186,6 +257,127 @@
         }
 
     </script>
+
+    <!-- UNTUK DRAG AND DROP MULTIPLE IMAGE -->
+    <script>
+        let dropBox = document.getElementById('dropBox');
+
+        // modify all of the event types needed for the script so that the browser
+        // doesn't open the image in the browser tab (default behavior)
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(evt => {
+            dropBox.addEventListener(evt, prevDefault, false);
+        });
+
+        function prevDefault(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        // remove and add the hover class, depending on whether something is being
+        // actively dragged over the box area
+        ['dragenter', 'dragover'].forEach(evt => {
+            dropBox.addEventListener(evt, hover, false);
+        });
+        ['dragleave', 'drop'].forEach(evt => {
+            dropBox.addEventListener(evt, unhover, false);
+        });
+
+        function hover(e) {
+            dropBox.classList.add('hover');
+        }
+
+        function unhover(e) {
+            dropBox.classList.remove('hover');
+        }
+
+        // the DataTransfer object holds the data being dragged. it's accessible
+        // from the dataTransfer property of drag events. the files property has
+        // a list of all the files being dragged. put it into the filesManager function
+        dropBox.addEventListener('drop', mngDrop, false);
+
+        function mngDrop(e) {
+            let dataTrans = e.dataTransfer;
+            let files = dataTrans.files;
+            filesManager(files);
+        }
+
+        // use FormData browser API to create a set of key/value pairs representing
+        // form fields and their values, to send using XMLHttpRequest.send() method.
+        // Uses the same format a form would use with multipart/form-data encoding
+        function upFile(file) {
+            //only allow images to be dropped
+            let imageType = /image.*/;
+            if (file.type.match(imageType)) {
+                let url = 'HTTP/HTTPS URL TO SEND THE DATA TO';
+                // create a FormData object
+                let formData = new FormData();
+                // add a new value to an existing key inside a FormData object or add the
+                // key if it doesn't exist. the filesManager function will loop through
+                // each file and send it here to be added
+                formData.append('file', file);
+
+                // standard file upload fetch setup
+                fetch(url, {
+                        method: 'put',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(result => {
+                        console.log('Success:', result);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            } else {
+                console.error("Only images are allowed!", file);
+            }
+        }
+
+
+        // use the FileReader API to get the image data, create an img element, and add
+        // it to the gallery div. The API is asynchronous so onloadend is used to get the
+        // result of the API function
+        function previewFile(file) {
+            // only allow images to be dropped
+            let imageType = /image.*/;
+            if (file.type.match(imageType)) {
+                let fReader = new FileReader();
+                let gallery = document.getElementById('gallery');
+                // reads the contents of the specified Blob. the result attribute of this
+                // with hold a data: URL representing the file's data
+                fReader.readAsDataURL(file);
+                // handler for the loadend event, triggered when the reading operation is
+                // completed (whether success or failure)
+                fReader.onloadend = function () {
+                    let wrap = document.createElement('div');
+                    let img = document.createElement('img');
+                    // set the img src attribute to the file's contents (from read operation)
+                    img.src = fReader.result;
+                    let imgCapt = document.createElement('p');
+                    // the name prop of the file contains the file name, and the size prop
+                    // the file size. convert bytes to KB for the file size
+                    let fSize = (file.size / 1000) + ' KB';
+                    imgCapt.innerHTML =
+                        `<span class="fName">${file.name}</span><span class="fSize">${fSize}</span><span class="fType">${file.type}</span>`;
+                    gallery.appendChild(wrap).appendChild(img);
+                    gallery.appendChild(wrap).appendChild(imgCapt);
+                }
+            } else {
+                console.error("Only images are allowed!", file);
+            }
+        }
+
+        function filesManager(files) {
+            // spread the files array from the DataTransfer.files property into a new
+            // files array here
+            files = [...files];
+            // send each element in the array to both the upFile and previewFile
+            // functions
+            files.forEach(upFile);
+            files.forEach(previewFile);
+        }
+
+    </script>
     <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             function handleDropdownClick(event) {
@@ -234,7 +426,7 @@
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="{{asset ('admin/assets/js/argon-dashboard.min.js?v=2.0.4')}}"></script>
+    <script src="{{ asset ('admin/assets/js/argon-dashboard.min.js?v=2.0.4') }}"></script>
 </body>
 
 </html>
