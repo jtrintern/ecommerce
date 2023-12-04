@@ -421,6 +421,27 @@
         }
 
     </script>
+
+    <!-- Untuk allert success -->
+    <script>
+        // Menunggu dokumen siap
+        document.addEventListener("DOMContentLoaded", function() {
+            // Menentukan waktu munculnya alert dalam milidetik (3000 ms = 3 detik)
+            var alertTimeout = 3000;
+
+            // Cari elemen alert
+            var alertElement = document.getElementById('success-alert');
+
+            // Jika elemen alert ditemukan
+            if (alertElement) {
+                // Atur timeout untuk menyembunyikan alert setelah waktu tertentu
+                setTimeout(function() {
+                    alertElement.style.display = 'none';
+                }, alertTimeout);
+            }
+        });
+    </script>
+
     <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             function handleDropdownClick(event) {

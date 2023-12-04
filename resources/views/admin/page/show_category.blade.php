@@ -36,6 +36,11 @@
                         </form>
                         <div class="card-body px-1 pt-0 pb-2 mb-2">
                             <div class="table-responsive p-0">
+                            @if(Session::has('success'))
+                                <div class="alert alert-success" role="alert" id="success-alert">
+                                    {{ Session::get('success') }}
+                                </div>
+                            @endif
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
