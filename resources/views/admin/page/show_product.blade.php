@@ -12,8 +12,22 @@
                                 style="background: #344767; border: 1px solid #24263D; color: #FFFDF4; shadow: none;">Add
                                 Products</button>
                         </div>
+                        @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
+                            @if (Session::has('success'))
+                                    <div class="alert alert-success" role="alert" id="success-alert">
+                                        {{ Session::get('success') }}
+                                    </div>
+                                @endif
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
