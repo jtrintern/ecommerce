@@ -24,7 +24,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="name" style="font-size:12px; color: #344767;">Product Name</label>
-                                        <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
+                                        <input type="text" value="{{old('name')}}" name="name" class="form-control" id="exampleFormControlInput1"
                                             placeholder="">
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                                             <select name="category_id" id="category" style="width:100%; height: 40px; border-radius: 0.5rem; border-color: #d2d6da;">
                                                 <option value=""></option>
                                                 @foreach ($cat as $category)
-                                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    <option value="{{$category->id}}" {{ old('category') == $category->id ? 'selected' : '' }}>{{$category->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -44,14 +44,14 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="name" style="font-size:12px; color: #344767;">Price</label>
-                                        <input type="number" name="price" class="form-control" id="exampleFormControlInput1"
+                                        <input type="number" value="{{old('price')}}" name="price" class="form-control" id="exampleFormControlInput1"
                                             placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="name" style="font-size:12px; color: #344767;">Stock</label>
-                                        <input type="number" name="stock" class="form-control" id="exampleFormControlInput1"
+                                        <input type="number" value="{{old('stock')}}" name="stock" class="form-control" id="exampleFormControlInput1"
                                             placeholder="">
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@
                                     <div class="form-group">
                                         <label for="name" style="font-size:12px; color: #344767;">Description</label>
                                         <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"
-                                            placeholder=""></textarea>
+                                            placeholder="">{{old('desc')}}</textarea>
                                     </div>
                                 </div>
                             </div>

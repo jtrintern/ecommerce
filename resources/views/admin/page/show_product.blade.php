@@ -34,12 +34,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $i =1;
+                                        @endphp
                                         @foreach ($product as $key => $prod)
                                             <tr>
                                                 <td>
                                                     <div class="d-flex px-3 py-1">
                                                         <span
-                                                            class="text-secondary text-xs font-weight-bold">{{ $key }}</span>
+                                                            class="text-secondary text-xs font-weight-bold">{{ $i++ }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
