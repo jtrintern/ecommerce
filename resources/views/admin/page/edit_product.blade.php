@@ -6,7 +6,7 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0 font-weight-bolder d-flex justify-content-between">
-                        <h6>Add Products</h6>
+                        <h6>Edit Products</h6>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2" style="margin: 20px 24px 20px 24px">
                         <form enctype="multipart/form-data" method="post" action="{{ route('updateProduct', ['product' => $product]) }}">
@@ -32,13 +32,15 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="category" style="font-size:12px; color: #344767;">Category</label>
-                                        <select name="category_id" id="category">
-                                            @foreach ($cat as $category)
-                                                <option value="{{ $category->id }}" {{ ($category->id == $product->cat_id) ? 'selected' : '' }}>
-                                                    {{ $category->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <div class="select-category">
+                                            <select name="category_id" id="category" style="width:100%; height: 40px; border-radius: 0.5rem; border-color: #d2d6da;">
+                                                @foreach ($cat as $category)
+                                                    <option value="{{ $category->id }}" {{ ($category->id == $product->cat_id) ? 'selected' : '' }}>
+                                                        {{ $category->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -87,7 +89,7 @@
                                         <div id="gallery"></div>
                                     </div>
                                 </div>
-                                <p>tambahno tulisan cilik "jika ingin update harus upload ulang gambar"</p>
+                                <p style="font-size: 12px;">*If you want to update, you have to re-upload the image</p>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">

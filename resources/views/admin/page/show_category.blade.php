@@ -87,7 +87,7 @@
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="exampleModalLabel">Edit
                                                                         Category</h5>
-                                                                    <button type="button" class="close"
+                                                                    <button type="button" class="close" style="border:none; font-size:24px; background: transparent;"
                                                                         data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
