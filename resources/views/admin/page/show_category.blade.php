@@ -36,11 +36,11 @@
                         </form>
                         <div class="card-body px-1 pt-0 pb-2 mb-2">
                             <div class="table-responsive p-0">
-                            @if(Session::has('success'))
-                                <div class="alert alert-success" role="alert" id="success-alert">
-                                    {{ Session::get('success') }}
-                                </div>
-                            @endif
+                                @if (Session::has('success'))
+                                    <div class="alert alert-success" role="alert" id="success-alert">
+                                        {{ Session::get('success') }}
+                                    </div>
+                                @endif
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
@@ -74,13 +74,14 @@
                                                 <td class="text-sm">
                                                     <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#FFC93F; color:#fff; padding: 10px 15px;"
-                                                        data-toggle="modal" data-target="#editModal{{$cat->id}}">
+                                                        data-toggle="modal" data-target="#editModal{{ $cat->id }}">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </button>
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="editModal{{$cat->id}}" tabindex="-1" role="dialog"
-                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="editModal{{ $cat->id }}" tabindex="-1"
+                                                        role="dialog" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -129,19 +130,21 @@
 
                                                     <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#DD322B; color:#fff;padding: 10px 15px;"
-                                                        data-toggle="modal" data-target="#deleteModal{{$cat->id}}">
+                                                        data-toggle="modal" data-target="#deleteModal{{ $cat->id }}">
                                                         <i class="fa-regular fa-trash-can"></i>
                                                     </button>
 
-                                                    <div class="modal fade" id="deleteModal{{$cat->id}}" tabindex="-1" role="dialog"
-                                                        aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="deleteModal{{ $cat->id }}"
+                                                        tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+                                                        aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="deleteModalLabel">Delete
                                                                         Category
                                                                     </h5>
-                                                                    <button type="button" class="close" style="border:none; font-size:24px; background: transparent;"
+                                                                    <button type="button" class="close"
+                                                                        style="border:none; font-size:24px; background: transparent;"
                                                                         data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
@@ -152,11 +155,13 @@
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
                                                                         data-dismiss="modal">Close</button>
-                                                                    <a href="{{route('deleteCategory', ['category'=> $cat])}}"
-                                                                        class="btn" style="background: #DD322B; color: #fff;">Delete</a>
+                                                                    <a href="{{ route('deleteCategory', ['category' => $cat]) }}"
+                                                                        class="btn"
+                                                                        style="background: #DD322B; color: #fff;">Delete</a>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -38,29 +38,63 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex px-3 py-1">
-                                                        <span class="text-secondary text-xs font-weight-bold">{{$key}}</span>
+                                                        <span
+                                                            class="text-secondary text-xs font-weight-bold">{{ $key }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <span class="text-secondary text-xs font-weight-bold">{{$prod->name}}</span>
+                                                    <span
+                                                        class="text-secondary text-xs font-weight-bold">{{ $prod->name }}</span>
                                                 </td>
                                                 <td class="text-sm">
-                                                    <span class="text-secondary text-xs font-weight-bold">{{$prod->stock}}</span>
+                                                    <span
+                                                        class="text-secondary text-xs font-weight-bold">{{ $prod->stock }}</span>
                                                 </td>
                                                 <td class="text-sm">
-                                                    <span class="text-secondary text-xs font-weight-bold">Rp {{$prod->price}}</span>
+                                                    <span class="text-secondary text-xs font-weight-bold">Rp
+                                                        {{ $prod->price }}</span>
                                                 </td>
                                                 <td class="text-sm">
-                                                    <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
+                                                    <a href="{{ route('editProduct', ['product' => $prod]) }}"
+                                                        rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#FFC93F; color:#fff; padding: 10px 15px;"
                                                         data-original-title="" title="">
                                                         <i class="fa-solid fa-pen-to-square"></i>
-                                                    </button>
+                                                    </a>
                                                     <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#DD322B; color:#fff;padding: 10px 15px;"
-                                                        data-original-title="" title="">
+                                                        data-toggle="modal" data-target="#deleteModal{{ $prod->id }}">
                                                         <i class="fa-regular fa-trash-can"></i>
                                                     </button>
+
+                                                    <div class="modal fade" id="deleteModal{{ $prod->id }}"
+                                                        tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="deleteModalLabel">Delete
+                                                                        Product
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        style="border:none; font-size:24px; background: transparent;"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Are you sure?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <a href="{{ route('deleteProduct', ['product' => $prod]) }}"
+                                                                        class="btn"
+                                                                        style="background: #DD322B; color: #fff;">Delete</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach

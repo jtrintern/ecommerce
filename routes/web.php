@@ -27,6 +27,10 @@ Route::group(['middleware' => ['role:admin', 'auth', 'verified'], 'prefix' => 'a
     Route::get('/product', [ProductController::class , 'index'])->name('indexProduct');
     Route::get('/product/add', [ProductController::class , 'create'])->name('addProduct');
     Route::post('/storeProduct', [ProductController::class , 'store'])->name('storeProduct');
+    Route::get('/product/edit/{product}', [ProductController::class , 'edit'])->name('editProduct');
+    Route::put('/updateProduct/{product}', [ProductController::class , 'update'])->name('updateProduct');
+    Route::get('/deleteProduct/{product}', [ProductController::class , 'destroy'])->name('deleteProduct');
+
 
     Route::get('/category', [CategoryController::class , 'index'])->name('indexCategory');
     Route::post('/storeCategory', [CategoryController::class , 'store'])->name('storeCategory');
