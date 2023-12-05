@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,18 +24,14 @@ Route::group(['middleware' => ['role:admin', 'auth', 'verified'], 'prefix' => 'a
         return view('admin.index');
     })->name('admin.dashboard');
 
-    Route::get('/product', function () {
-        return view('admin.page.show_product');
-    })->name('admin.product');
+    Route::get('/product', [ProductController::class , 'index'])->name('indexProduct');
+    Route::get('/product/add', [ProductController::class , 'create'])->name('addProduct');
+    Route::post('/storeProduct', [ProductController::class , 'store'])->name('storeProduct');
 
     Route::get('/category', [CategoryController::class , 'index'])->name('indexCategory');
     Route::post('/storeCategory', [CategoryController::class , 'store'])->name('storeCategory');
     Route::get('/deleteCategory/{category}', [CategoryController::class , 'destroy'])->name('deleteCategory');
     Route::post('/editCategory/{category}', [CategoryController::class , 'update'])->name('editCategory');
-
-    Route::get('/product/add', function () {
-        return view('admin.page.add_product');
-    })->name('admin.add.product');
 
     Route::get('/orders', function () {
         return view('admin.page.orders');
