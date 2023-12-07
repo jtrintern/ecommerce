@@ -76,7 +76,7 @@
                                                         rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#FFC93F; color:#fff; padding: 10px 15px;"
                                                         data-original-title="" title="">
-                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                        <i class="fa-regular fa-pen-to-square"></i>
                                                     </a>
                                                     <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#DD322B; color:#fff;padding: 10px 15px;"

@@ -75,7 +75,7 @@
                                                     <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#FFC93F; color:#fff; padding: 10px 15px;"
                                                         data-toggle="modal" data-target="#editModal{{ $cat->id }}">
-                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                        <i class="fa-regular fa-pen-to-square"></i>
                                                     </button>
 
                                                     <!-- Modal -->

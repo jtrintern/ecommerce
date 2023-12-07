@@ -54,6 +54,16 @@
                     <span class="nav-link-text ms-1">Orders</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link @if (request()->is('admin/users', 'admin/users/add',)) active @endif"
+                    href="{{ route ('admin.users') }}">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-regular fa-user text-dark text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Users</span>
+                </a>
+            </li>
             <!-- <li class="nav-item" id="tablesDropdown">
                 <a class="nav-link @if (request()->is('admin/product')) active @endif" href="#">
                     <div
