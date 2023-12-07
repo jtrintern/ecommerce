@@ -3,10 +3,8 @@
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0" href="{{route ('admin.dashboard')}}"
-            target="_blank">
-            <img src="{{ asset('admin/assets/img/logo.png') }}" class="navbar-brand-img h-100"
-                alt="main_logo">
+        <a class="navbar-brand m-0" href="{{ route('admin.dashboard') }}" target="_blank">
+            <img src="{{ asset('admin/assets/img/logo.png') }}" class="navbar-brand-img h-100" alt="main_logo">
             <span class="ms-1 font-weight-bold" style="font-size:18px;">Toyspace.Inc</span>
         </a>
     </div>
@@ -16,7 +14,7 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link @if (request()->is('admin/dashboard')) active @endif"
-                    href="{{ route ('admin.dashboard') }}">
+                    href="{{ route('admin.dashboard') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-tv-2 text-dark text-sm opacity-10"></i>
@@ -25,8 +23,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (request()->is('admin/product', 'admin/product/add', 'admin/product/edit/*')) active @endif"
-                    href="{{ route ('indexProduct') }}">
+                <a class="nav-link @if (request()->is('admin/product', 'admin/product/add', 'admin/product/edit/*')) active @endif" href="{{ route('indexProduct') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa-regular fa-file text-dark text-sm opacity-10"></i>
@@ -36,7 +33,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link @if (request()->is('admin/category')) active @endif"
-                    href="{{ route ('indexCategory') }}">
+                    href="{{ route('indexCategory') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fas fa-book text-dark text-sm opacity-10"></i>
@@ -45,8 +42,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (request()->is('admin/orders')) active @endif"
-                    href="{{ route ('admin.orders') }}">
+                <a class="nav-link @if (request()->is('admin/orders')) active @endif" href="{{ route('admin.orders') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa-solid fa-money-bill text-dark text-sm opacity-10"></i>
@@ -54,16 +50,17 @@
                     <span class="nav-link-text ms-1">Orders</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link @if (request()->is('admin/users', 'admin/users/add',)) active @endif"
-                    href="{{ route ('admin.users') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-regular fa-user text-dark text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Users</span>
-                </a>
-            </li>
+            @role('superadmin')
+                <li class="nav-item">
+                    <a class="nav-link @if (request()->is('admin/users', 'admin/users/add')) active @endif" href="{{ route('indexAdmin') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fa-regular fa-user text-dark text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Admin</span>
+                    </a>
+                </li>
+            @endrole
             <!-- <li class="nav-item" id="tablesDropdown">
                 <a class="nav-link @if (request()->is('admin/product')) active @endif" href="#">
                     <div

@@ -128,6 +128,7 @@
                         <div class="card-header text-center pt-4">
                             <h5>Sign Up</h5>
                         </div>
+                        <x-validation-errors class="mb-4" />
                         <div class="card-body pt-0">
                             <form role="form" method="POST" action="{{ route('register') }}">
                                 @csrf
@@ -202,6 +203,7 @@
                                     </label>
                                 </div>
                                 <div class="text-center">
+                                    <input type="hidden" name="role" value="user">
                                     <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
                                 </div>
                                 <p class="text-sm mt-3 mb-0">Already have an account? <a

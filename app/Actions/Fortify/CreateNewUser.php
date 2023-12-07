@@ -23,7 +23,7 @@ class CreateNewUser implements CreatesNewUsers
             'firstName' => ['required', 'string', 'max:255'],
             'lastName' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:13'],
-            'address' => ['required', 'string', 'max:13'],
+            'address' => ['required', 'string', 'max:255'],
             'birthdate' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
@@ -40,7 +40,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
 
-        $user->assignRole('user');
+        ($input['role']=="user") ? $user->assignRole('user') : $user->assignRole('admin');
 
         return $user;
     }

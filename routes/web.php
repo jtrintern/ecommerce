@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['role:admin', 'auth', 'verified'], 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['role:admin|superadmin', 'auth', 'verified'], 'prefix' => 'admin'], function () {
     Route::get('/dashboard', function () {
         return view('admin.index');
     })->name('admin.dashboard');
@@ -36,18 +37,18 @@ Route::group(['middleware' => ['role:admin', 'auth', 'verified'], 'prefix' => 'a
     Route::post('/storeCategory', [CategoryController::class , 'store'])->name('storeCategory');
     Route::get('/deleteCategory/{category}', [CategoryController::class , 'destroy'])->name('deleteCategory');
     Route::post('/editCategory/{category}', [CategoryController::class , 'update'])->name('editCategory');
+    
+    Route::group(['middleware' => ['role:superadmin']], function(){
+        Route::get('/indexAdmin', [AdminController::class , 'index'])->name('indexAdmin');
+        Route::get('/addAdmin', [AdminController::class , 'create'])->name('addAdmin');
+        Route::post('/storeAdmin', [AdminController::class , 'store'])->name('storeAdmin');
+        Route::get('/deleteAdmin/{admin}', [AdminController::class , 'destroy'])->name('deleteAdmin');
+    });
 
     Route::get('/orders', function () {
         return view('admin.page.orders');
     })->name('admin.orders');
 
-    Route::get('/users', function () {
-        return view('admin.page.users');
-    })->name('admin.users');
-
-    Route::get('/users/add', function () {
-        return view('admin.page.add_user');
-    })->name('admin.addUsers');
 });
 
 Route::group(['middleware' => ['auth', 'verified']], function () {

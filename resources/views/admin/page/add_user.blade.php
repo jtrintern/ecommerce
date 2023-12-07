@@ -9,7 +9,7 @@
                         <h6>Add Products</h6>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2" style="margin: 20px 24px 20px 24px">
-                        <form method="POST" enctype="multipart/form-data" action="">
+                        <form method="POST" enctype="multipart/form-data" action="{{route('storeAdmin')}}">
                             @csrf
                             @if($errors->any())
                                 <div class="alert alert-danger">
@@ -64,7 +64,7 @@
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-default"
                                                 style="background-color: #e9ecef; font-size: 11px;">+62</span>
-                                            <input type="number" name="phone" class="form-control"
+                                            <input type="text" name="phone" class="form-control"
                                                 aria-label="Sizing example input"
                                                 aria-describedby="inputGroup-sizing-default"
                                                 placeholder="Type Phone Number" style="font-size: 11px; padding-left: 4px;">
@@ -89,6 +89,7 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-12">
+                                    <input type="hidden" name="role" value="admin">
                                     <button type="submit" class="btn btn-primary"
                                         style="background:#24263D; color: #FFF; width:100%; box-shadow: none; margin: 10px 0">Add
                                         Users</button>
