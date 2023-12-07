@@ -54,11 +54,11 @@
                                                         class="text-secondary text-xs font-weight-bold">{{ $admin->phone }}</span>
                                                 </td>
                                                 <td class="text-sm">
-                                                    <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
+                                                    <a href="{{route('viewAdmin', ['admin' => $admin])}}" type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#2CC83C; color:#fff; padding: 10px 15px;"
                                                         data-original-title="" title="">
                                                         <i class="fa-regular fa-eye"></i>
-                                                    </button>
+                                                    </a>
                                                     <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
                                                         style="background-color:#FFC93F; color:#fff; padding: 10px 15px;"
                                                         data-original-title="" title="">
