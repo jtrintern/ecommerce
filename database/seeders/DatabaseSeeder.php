@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
         $userOne = User::create([
             'firstName' => 'Dzaki',
             'lastName' => 'Ahmad',
-            'email' => 'dzakiaf19@gmail.com',
-            'phone' => '82331038689',
+            'email' => 'ayam@gmail.com',
+            'phone' => '82333948689',
             'address' => 'Banyuwangi',
             'birthdate' => '2002-06-19',
             'email_verified_at' => now(),
