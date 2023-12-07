@@ -40,6 +40,14 @@ Route::group(['middleware' => ['role:admin', 'auth', 'verified'], 'prefix' => 'a
     Route::get('/orders', function () {
         return view('admin.page.orders');
     })->name('admin.orders');
+
+    Route::get('/users', function () {
+        return view('admin.page.users');
+    })->name('admin.users');
+
+    Route::get('/users/add', function () {
+        return view('admin.page.add_user');
+    })->name('admin.addUsers');
 });
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
