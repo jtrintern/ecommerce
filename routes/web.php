@@ -42,7 +42,7 @@ Route::group(['middleware' => ['role:admin', 'auth', 'verified'], 'prefix' => 'a
     })->name('admin.orders');
 });
 
-Route::group(['middleware' => ['role:user', 'auth', 'verified']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
