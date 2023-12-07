@@ -82,7 +82,7 @@
     </div>
     <form method="POST" action="{{ route('logout') }}" x-data>
         @csrf
-        <div class="sidenav-footer mt-auto pt-9 mx-3">
+        <div class="sidenav-footer mt-auto pt-8 mx-3">
             <button class="btn btn-sm mb-0 w-100" style="background: #24263D; color: #fff" type="submit">Log
                 out</button>
         </div>
