@@ -40,6 +40,7 @@ Route::group(['middleware' => ['role:admin|superadmin', 'auth', 'verified'], 'pr
     
     Route::group(['middleware' => ['role:superadmin']], function(){
         Route::get('/indexAdmin', [AdminController::class , 'index'])->name('indexAdmin');
+        Route::get('/showAdmin/{admin}', [AdminController::class , 'show'])->name('viewAdmin');
         Route::get('/addAdmin', [AdminController::class , 'create'])->name('addAdmin');
         Route::post('/storeAdmin', [AdminController::class , 'store'])->name('storeAdmin');
         Route::get('/deleteAdmin/{admin}', [AdminController::class , 'destroy'])->name('deleteAdmin');
