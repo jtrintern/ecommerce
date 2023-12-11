@@ -56,3 +56,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/TOYSPACE.INC', function () {
+    return view('rentcarr.index');
+})->name('admin.orders');
