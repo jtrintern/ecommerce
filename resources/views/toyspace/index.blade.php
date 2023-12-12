@@ -3,32 +3,44 @@
 
 @section('content')
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center">
+<section id="hero1" class="d-flex align-items-center">
 
     <div class="container align-items-center">
         <div class="row">
-            <!-- <div class="col-lg-12 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <h1>Temukan Kendaraan Impian untuk <br>Perjalanan yang Tidak Terlupakan!</h1>
-                    <h2>rentCAR, siap membawa anda menuju petualangan yang tak terlupakan</h2>
-                </div> -->
-            <!-- <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                                  <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-                                </div> -->
-
             <div class="row image" style="margin-right: 0;">
                 <div class="col-lg-8" data-aos="fade-right" style="margin: 0; padding:0;">
-                    <!-- Gambar sebelah kiri -->
-                    <img src="{{ asset ('toyspace/assets/img/hero-1.png') }}"
-                        class="img-fluid" alt="Gambar Kiri">
+                    <!-- <img src="{{ asset ('toyspace/assets/img/hero-1.png') }}"
+                        class="img-fluid" alt="Gambar Kiri"> -->
+                    <div id="heroCarousel" data-bs-interval="1000" class="carousel slide carousel-fade"
+                        data-bs-ride="carousel">
+
+                        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+                        <div class="carousel-inner" role="listbox">
+
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active"
+                                style="background-image: url({{ asset ('toyspace/assets/img/hero.png') }})">
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="carousel-item"
+                                style="background-image: url({{ asset ('toyspace/assets/img/hero-2.png') }})">
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="carousel-item"
+                                style="background-image: url({{ asset ('toyspace/assets/img/hero-3.png') }})">
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4 image-right" data-aos="fade-left" style="margin: 0; padding:0;">
-                    <!-- Gambar atas -->
                     <img src="{{ asset ('toyspace/assets/img/hero-2.png') }}"
                         class="img-fluid" alt="Gambar Atas">
-                    <!-- Gambar bawah -->
                     <img src="{{ asset ('toyspace/assets/img/hero-3.png') }}"
-                        class="img-fluid pt-3" alt="Gambar Bawah">
+                        class="img-fluid" alt="Gambar Bawah" style="margin-top: 16px">
                 </div>
             </div>
 
@@ -50,7 +62,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 </section>
