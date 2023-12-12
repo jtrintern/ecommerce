@@ -236,6 +236,29 @@
     selector: '.product-lightbox'
   });
 
+  // mengatur count quantity pada Single Product
+  document.addEventListener('DOMContentLoaded', function () {
+    const decreaseBtn = document.querySelector('.decrease');
+    const increaseBtn = document.querySelector('.increase');
+    const countSpan = document.querySelector('.count');
+
+    // Fungsi untuk mengurangi kuantitas
+    decreaseBtn.addEventListener('click', function () {
+        let count = parseInt(countSpan.textContent);
+        if (count > 1) {
+            count--;
+            countSpan.textContent = count;
+        }
+    });
+
+    // Fungsi untuk menambah kuantitas
+    increaseBtn.addEventListener('click', function () {
+        let count = parseInt(countSpan.textContent);
+        count++;
+        countSpan.textContent = count;
+    });
+});
+
   /**
    * Animation on scroll
    */

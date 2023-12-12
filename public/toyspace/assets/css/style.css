@@ -1130,6 +1130,201 @@ section {
 
 
 /*--------------------------------------------------------------
+# Detail Kendaraan Section 3
+--------------------------------------------------------------*/
+
+/* .product-detail .container {
+  margin: 60px 0 60px 30px;
+} */
+
+#product-detail {
+  margin: 70px 0 60px 0;
+}
+
+.product-detail .carousel-inner img {
+  /* width: 100%;
+  height: 100%; */
+  min-height: 230px;
+  /* max-height: 230px; */
+  border-radius: 6px;
+}
+
+.product-detail #custCarousel .carousel-indicators {
+  position: static;
+  margin-top: 20px;
+}
+
+.product-detail #custCarousel .carousel-indicators>li {
+  width: 100px;
+}
+
+.product-detail #custCarousel .carousel-indicators li img {
+  display: block;
+  opacity: 0.5;
+  min-height: 70px;
+  max-height: 70px;
+  /* max-height: 60px; */
+  min-width: 80px;
+  max-width: 80px;
+  border-radius: 6px;
+}
+
+.product-detail #custCarousel .carousel-indicators li.active img {
+  opacity: 1;
+}
+
+.product-detail #custCarousel .carousel-indicators li:hover img {
+  opacity: 0.75;
+}
+
+.product-detail .carousel-item img {
+
+  width: 80%;
+}
+
+.product-detail .product-info .title-product h4 {
+  background-color: #F12B2C;
+  color: #fff;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 10px;
+  width: 64px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.product-detail .product-info .title-product h3 {
+  font-family: 'Montserrat Alternates';
+  font-size: 28px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.product-detail .product-info .description .harga {
+  margin: 20px 0 12px 0;
+}
+
+.product-detail .product-info .description .harga h3 {
+  color: var(--primary-color);
+  font-family: 'Poppins';
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding-right: 10px;
+  border-right: 1px solid #BFBFBF;
+  margin-right: 10px;
+}
+
+.product-detail .product-info .description .harga i{
+  color: #F4B30C;
+  letter-spacing: 4px;
+  margin-right: 10px;
+}
+
+.product-detail .product-info .description .harga h4 {
+  font-family: 'Poppins';
+  font-size: 12px;
+  color: #171C24;
+}
+
+.product-detail .product-info .description .desc h4 {
+  font-family: 'Poppins';
+  font-size: 12px;
+  color: #000;
+}
+
+.product-detail .product-info .description .desc p {
+  font-family: 'Poppins';
+  font-size: 12px;
+  color: var(--t-black);
+  font-weight: normal;
+  line-height: 20px;
+}
+
+.product-detail .add-cart h5 {
+  font-family: 'Poppins';
+  font-size: 14px;
+  color: #000;
+  margin-top: 8px;
+  /* margin-right: 200px; */
+}
+
+
+.product-detail .product-info .add-cart .quantity {
+  /* background-color: #F2F4FF; */
+  border-radius: 60px;
+  /* margin-top: 18px;
+  margin-right: 20px; */
+  /* justify-content: center; */
+  text-align: center;
+  /* align-items: center; */
+}
+
+.product-detail .product-info .add-cart .quantity .decrease {
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: var(--primary-color);
+  background-color: transparent;
+}
+
+.product-detail .product-info .add-cart .quantity span {
+  font-family: 'DM Sans';
+  color: #111111;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0 10px; 
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #D0CCCC;
+  padding: 14px 22px;
+  margin: 0 5px;
+}
+
+.product-detail .product-info .add-cart .quantity .increase {
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: var(--primary-color);
+  background-color: transparent;
+}
+
+/* Tambahkan gaya untuk tombol tambah dan kurang */
+.product-detail .product-info .add-cart .quantity button {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  /* border-radius: 100%; */
+  width: 34.19px;
+  height: 34.19px;
+  /* border: none; */
+}
+
+.product-detail .entry-button {
+  position: relative;
+  font-family: 'DM Sans';
+  /* text-align: end; */
+}
+
+.product-detail .btn-entry {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 8px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  /* margin: 15px 2px; */
+  cursor: pointer;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.product-detail .btn-entry:hover {
+  opacity: 0.9;
+  background-color: var(--secondary-color);
+  color: var(--black-color);
+}
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
