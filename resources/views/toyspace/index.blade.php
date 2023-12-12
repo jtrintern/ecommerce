@@ -234,112 +234,128 @@
             <div class="products row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2 g-lg-3 align-items-center justify-content-between"
                 data-aos="fade-up">
                 <div class="product col">
-                    <div class="card card-product shadow-sm h-10">
-                        <img class="card-img-top"
-                            src='{{ asset ("toyspace/assets/img/products/product-1.png") }}'
-                            alt=''>
-                        <div class="card-overlay">
-                            <span>See Details</span>
+                    <a href="{{ route ('singleProduct') }}">
+                        <div class="card card-product shadow-sm h-10">
+                            <img class="card-img-top"
+                                src='{{ asset ("toyspace/assets/img/products/product-1.png") }}'
+                                alt=''>
+                            <div class="card-overlay">
+                                <span>See Details</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="card-body">
                         <h2 class="card-title">Classic Teddy Bear</h2>
                         <h4 class="price">Rp 89.000</h4>
                     </div>
                 </div>
                 <div class="product col">
-                    <div class="card card-product shadow-sm h-10">
-                        <img class="card-img-top"
-                            src='{{ asset ("toyspace/assets/img/products/product-2.png") }}'
-                            alt=''>
-                        <div class="card-overlay">
-                            <span>See Details</span>
+                    <a href="{{ route ('singleProduct') }}">
+                        <div class="card card-product shadow-sm h-10">
+                            <img class="card-img-top"
+                                src='{{ asset ("toyspace/assets/img/products/product-2.png") }}'
+                                alt=''>
+                            <div class="card-overlay">
+                                <span>See Details</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="card-body">
                         <h2 class="card-title">Classic Teddy Bear</h2>
                         <h4 class="price">Rp 89.000</h4>
                     </div>
                 </div>
                 <div class="product col">
-                    <div class="card card-product shadow-sm h-10">
-                        <img class="card-img-top"
-                            src='{{ asset ("toyspace/assets/img/products/product-3.png") }}'
-                            alt=''>
-                        <div class="card-overlay">
-                            <span>See Details</span>
+                    <a href="{{ route ('singleProduct') }}">
+                        <div class="card card-product shadow-sm h-10">
+                            <img class="card-img-top"
+                                src='{{ asset ("toyspace/assets/img/products/product-3.png") }}'
+                                alt=''>
+                            <div class="card-overlay">
+                                <span>See Details</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="card-body">
                         <h2 class="card-title">Classic Teddy Bear</h2>
                         <h4 class="price">Rp 89.000</h4>
                     </div>
                 </div>
                 <div class="product col">
-                    <div class="card card-product shadow-sm h-10">
-                        <img class="card-img-top"
-                            src='{{ asset ("toyspace/assets/img/products/product-4.png") }}'
-                            alt=''>
-                        <div class="card-overlay">
-                            <span>See Details</span>
+                    <a href="{{ route ('singleProduct') }}">
+                        <div class="card card-product shadow-sm h-10">
+                            <img class="card-img-top"
+                                src='{{ asset ("toyspace/assets/img/products/product-4.png") }}'
+                                alt=''>
+                            <div class="card-overlay">
+                                <span>See Details</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="card-body">
                         <h2 class="card-title">Classic Teddy Bear</h2>
                         <h4 class="price">Rp 89.000</h4>
                     </div>
                 </div>
                 <div class="product col">
-                    <div class="card card-product shadow-sm h-10">
-                        <img class="card-img-top"
-                            src='{{ asset ("toyspace/assets/img/products/product-1.png") }}'
-                            alt=''>
-                        <div class="card-overlay">
-                            <span>See Details</span>
+                    <a href="{{ route ('singleProduct') }}">
+                        <div class="card card-product shadow-sm h-10">
+                            <img class="card-img-top"
+                                src='{{ asset ("toyspace/assets/img/products/product-1.png") }}'
+                                alt=''>
+                            <div class="card-overlay">
+                                <span>See Details</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="card-body">
                         <h2 class="card-title">Classic Teddy Bear</h2>
                         <h4 class="price">Rp 89.000</h4>
                     </div>
                 </div>
                 <div class="product col">
-                    <div class="card card-product shadow-sm h-10">
-                        <img class="card-img-top"
-                            src='{{ asset ("toyspace/assets/img/products/product-2.png") }}'
-                            alt=''>
-                        <div class="card-overlay">
-                            <span>See Details</span>
+                    <a href="{{ route ('singleProduct') }}">
+                        <div class="card card-product shadow-sm h-10">
+                            <img class="card-img-top"
+                                src='{{ asset ("toyspace/assets/img/products/product-2.png") }}'
+                                alt=''>
+                            <div class="card-overlay">
+                                <span>See Details</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="card-body">
                         <h2 class="card-title">Classic Teddy Bear</h2>
                         <h4 class="price">Rp 89.000</h4>
                     </div>
                 </div>
                 <div class="product col">
-                    <div class="card card-product shadow-sm h-10">
-                        <img class="card-img-top"
-                            src='{{ asset ("toyspace/assets/img/products/product-3.png") }}'
-                            alt=''>
-                        <div class="card-overlay">
-                            <span>See Details</span>
+                    <a href="{{ route ('singleProduct') }}">
+                        <div class="card card-product shadow-sm h-10">
+                            <img class="card-img-top"
+                                src='{{ asset ("toyspace/assets/img/products/product-3.png") }}'
+                                alt=''>
+                            <div class="card-overlay">
+                                <span>See Details</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="card-body">
                         <h2 class="card-title">Classic Teddy Bear</h2>
                         <h4 class="price">Rp 89.000</h4>
                     </div>
                 </div>
                 <div class="product col">
-                    <div class="card card-product shadow-sm h-10">
-                        <img class="card-img-top"
-                            src='{{ asset ("toyspace/assets/img/products/product-4.png") }}'
-                            alt=''>
-                        <div class="card-overlay">
-                            <span>See Details</span>
+                    <a href="{{ route ('singleProduct') }}">
+                        <div class="card card-product shadow-sm h-10">
+                            <img class="card-img-top"
+                                src='{{ asset ("toyspace/assets/img/products/product-4.png") }}'
+                                alt=''>
+                            <div class="card-overlay">
+                                <span>See Details</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="card-body">
                         <h2 class="card-title">Classic Teddy Bear</h2>
                         <h4 class="price">Rp 89.000</h4>

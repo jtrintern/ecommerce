@@ -134,4 +134,9 @@ class ProductController extends Controller
 
         return redirect()->route('indexProduct')->with('success', 'Product deleted successfully');
     }
+
+    public function single()
+    {
+        return view('toyspace.page.single_product');
+    }
 }

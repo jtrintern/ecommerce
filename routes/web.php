@@ -59,3 +59,4 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
 
 Route::get('/', [ProductController::class, 'home'])->name('home');
+Route::get('/singleProduct', [ProductController::class, 'single'])->name('singleProduct');

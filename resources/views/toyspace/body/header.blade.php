@@ -12,10 +12,10 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li>
-                    <a class="nav-link scrollto @if (request()->is('/')) active @endif" href="">Home</a>
+                    <a class="nav-link scrollto @if (request()->is('/')) active @endif" href="{{route ('home')}}">Home</a>
                 </li>
                 <li>
-                    <a class="nav-link scrollto" href="#about">About Us</a>
+                    <a class="nav-link scrollto" href="#">About Us</a>
                 </li>
                 <li>
                     <a class="nav-link scrollto" href="#galeri">Products</a>
