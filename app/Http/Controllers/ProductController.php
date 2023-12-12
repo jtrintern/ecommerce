@@ -19,6 +19,13 @@ class ProductController extends Controller
         $product = Product::all()->reverse();
         return view('admin.page.show_product', compact('product'));
     }
+    
+    public function home()
+    {
+        //
+        $product = Product::all();
+        return view('toyspace.index', compact('product'));
+    }
 
     /**
      * Show the form for creating a new resource.

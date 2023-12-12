@@ -1,4 +1,4 @@
-@extends('rentcarr.index_master')
+@extends('toyspace.index_master')
 @section('title', 'TOYSPACE. INC | Home')
 
 @section('content')

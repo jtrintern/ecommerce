@@ -58,6 +58,4 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     })->name('dashboard');
 });
 
-Route::get('/TOYSPACE.INC', function () {
-    return view('rentcarr.index');
-})->name('admin.orders');
+Route::get('/', [ProductController::class, 'home'])->name('home');

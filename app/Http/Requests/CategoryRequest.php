@@ -24,7 +24,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             //
-            'name' => 'required|max:15|min:3|unique:categories'
+            'name' => 'required|max:150|min:3|unique:categories'
         ];
     }
 
