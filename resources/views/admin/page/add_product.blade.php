@@ -35,7 +35,7 @@
                                             <select name="category_id" id="category" style="width:100%; height: 40px; border-radius: 0.5rem; border-color: #d2d6da;">
                                                 <option value=""></option>
                                                 @foreach ($cat as $category)
-                                                    <option value="{{$category->id}}" {{ old('category') == $category->id ? 'selected' : '' }}>{{$category->name}}</option>
+                                                    <option value="{{$category->id}}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{$category->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

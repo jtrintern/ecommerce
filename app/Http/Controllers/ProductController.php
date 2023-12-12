@@ -6,7 +6,7 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -19,7 +19,7 @@ class ProductController extends Controller
         $product = Product::all()->reverse();
         return view('admin.page.show_product', compact('product'));
     }
-    
+
     public function home()
     {
         //
@@ -56,9 +56,10 @@ class ProductController extends Controller
 
         // Simpan gambar ke tabel product_images
         foreach ($request->file('images') as $image) {
-            $path = $image->store('media/images'); // Sesuaikan path sesuai kebutuhan
+            $path = $image->store('media/images', 'public'); // Sesuaikan path sesuai kebutuhan
             // dd($path);
             $product->images()->create(['path' => $path]);
+            sleep(1);
         }
 
         return redirect()->route('indexProduct')->with('success', 'Product created successfully');
@@ -104,17 +105,19 @@ class ProductController extends Controller
 
             foreach ($product->images as $image) {
                 // dd($image->path);
-                Storage::delete($image->path);
+                if (File::exists($image->path)) {
+                    File::delete($image->path);
+                }
             }
             $product->images()->delete();
 
             foreach ($request->file('images') as $image) {
-                $path = $image->store('media/images'); // Sesuaikan path sesuai kebutuhan
+                $path = $image->public_path('media/images'); // Sesuaikan path sesuai kebutuhan
                 // dd($path);
                 $product->images()->create(['path' => $path]);
             }
         }
-
+             
 
 
         return redirect()->route('indexProduct')->with('success', 'Product updated successfully');
@@ -128,7 +131,9 @@ class ProductController extends Controller
         //
         foreach ($product->images as $image) {
             // dd($image->path);
-            Storage::delete($image->path);
+            if (File::exists($image->path)) {
+                File::delete($image->path);
+            }
         }
         $product->delete();
 

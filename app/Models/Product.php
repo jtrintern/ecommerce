@@ -28,7 +28,7 @@ class Product extends Model
         return $this->hasMany(ProductImage::class);
     }
 
-    public function getSlugOptions() : SlugOptions
+    public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('name')
