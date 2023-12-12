@@ -37,6 +37,7 @@
             </div>
             <div class="cart">
                 <i class="bi bi-cart3"></i>
+                <span class="notification">3</span>
             </div>
         </div>
 

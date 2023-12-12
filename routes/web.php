@@ -59,5 +59,5 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
 
 Route::get('/TOYSPACE.INC', function () {
-    return view('rentcarr.index');
+    return view('toyspace.index');
 })->name('admin.orders');
