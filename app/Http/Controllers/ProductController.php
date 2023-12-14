@@ -144,4 +144,9 @@ class ProductController extends Controller
     {
         return view('toyspace.page.single_product');
     }
+
+    public function shopCart()
+    {
+        return view('toyspace.page.shop_cart');
+    }
 }

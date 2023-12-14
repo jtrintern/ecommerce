@@ -5,8 +5,8 @@
 <main id="main">
     <section class="product-detail" id="product-detail">
         <div class="container">
-            <div class="row" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-7">
+            <div class="prod-detail d-flex" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-6 gambar">
                     <div id="custCarousel" class="carousel slide" data-ride="carousel" align="center">
                         <!-- slides -->
                         <div class="carousel-inner">
@@ -99,7 +99,7 @@
                             <button class="increase">+</button>
                         </div>
                         <div class="col-6 entry-button  justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" style="padding:0">
-                            <a class="btn-entry" href="">ADD TO CART</a>
+                            <a class="btn-entry" href="{{asset ('shopCart')}}">ADD TO CART</a>
                         </div>
                     </div>
                 </div>
