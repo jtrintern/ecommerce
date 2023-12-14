@@ -11,40 +11,38 @@
     </section>
     <section id="shop-cart" class="shop-cart">
         <div class="container">
-            <div class="title d-flex">
-                <div class="col-4">
-                    <h4>Product</h4>
-                </div>
-                <div class="col-2">
-                    <h4>Price</h4>
-                </div>
-                <div class="col-2">
-                    <h4>Quantity</h4>
-                </div>
-                <div class="col-2">
-                    <h4>Subtotal</h4>
-                </div>
-                <div class="col-2"></div>
-            </div>
-            <div class="product-det d-flex">
-                <div class="col-4">
-                    <h4>Hasbro Games Monopoli Classic Game - GSCC1009</h4>
-                </div>
-                <div class="col-2">
-                    <h4>Rp 189.999</h4>
-                </div>
-                <div class="col-2 quantity"><button class="decrease">-</button>
-                    <span class="count">1</span>
-                    <button class="increase">+</button></div>
-                <div class="col-2">
-                    <h4>Rp 379.998</h4>
-                </div>
-                <div class="col-2">
-                    <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
-                        style="background-color: #DD322B; color:#fff; padding: 5px 10px;" data-toggle="modal"
-                        data-target="#editModal"><i class="fa-regular fa-trash-can"></i>
-                    </button>
-                </div>
+            
+            <div class="table-responsive">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr class="">
+                            <th class="name-product">Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th class="sub-tot">Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td>Hasbro Games Monopoli Classic Game - GSCC1009</td>
+                            <td>Rp 189.999</td>
+                            <td class="quantity">
+                                <button class="decrease">-</button>
+                                <span class="count">1</span>
+                                <button class="increase">+</button>
+                            </td>
+                            <td>Rp 379.998</td>
+                            <td class="td-actions">
+                                <button type="button" rel="tooltip" class="btn btn-icon btn-simple"
+                                    style="background-color:#DD322B; color:#fff; padding: 5px 10px;"
+                                    data-original-title="" title="">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
