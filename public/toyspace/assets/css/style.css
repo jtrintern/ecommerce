@@ -1338,7 +1338,7 @@ section {
 --------------------------------------------------------------*/
 .shop_cart_page #title-cart {
     margin-top: 60px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .shop_cart_page .title-cart h3 {
@@ -1348,15 +1348,25 @@ section {
     color: var(--black);
 }
 
+.detail_cart {
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
+
 .shop_cart_page #shop-cart {
     padding-top: 0;
 }
 
-.shop_cart_page .shop-cart .container {
-    background-color: #fff;
+.shop_cart_page .shop-cart {
     border-radius: 8px;
+    margin-right: 20px;
+}
+
+.shop_cart_page .shop-cart .table-responsive {
+    padding: 20px;
+    background-color: #fff;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    padding: 30px 20px;
+    border-radius: 8px;
 }
 
 .shop_cart_page .shop-cart .table thead {
@@ -1384,12 +1394,12 @@ section {
 }
 
 .shop_cart_page .shop-cart .table .name-product {
-    width: 373px;
+    width: 280px;
 }
 
-.shop_cart_page .shop-cart .table .sub-tot {
-    width: 160px
-}
+/* .shop_cart_page .shop-cart .table .sub-tot {
+    width: 100px
+} */
 
 .shop_cart_page .shop-cart .table tbody .quantity .decrease {
     padding-left: 0;
@@ -1407,19 +1417,20 @@ section {
 }
 
 .shop_cart_page .cart-total {
-    padding-top: 0;
-}
-
-.shop_cart_page .cart-total .container {
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    padding: 30px 10px;
+    background-color: #fff;
+    padding: 28px;
 }
 
 .shop_cart_page .cart-total .titles {
     border-bottom: 1px solid rgb(0, 0, 0, 6%);
     padding-bottom: 10px;
+    padding-left: 0;
+}
+
+.shop_cart_page .sub-tot {
+    justify-content: space-between;
 }
 
 .shop_cart_page .cart-total .titles h4 {
@@ -1430,32 +1441,49 @@ section {
 }
 
 .shop_cart_page .cart-total .body {
-    padding: 30px 0px;
+    padding: 20px 0px;
     border-bottom: 1px solid rgb(0, 0, 0, 6%);
 }
 
-.shop_cart_page .cart-total .sub-total,
-.shop_cart_page .cart-total .shipping,
-.shop_cart_page .cart-total .change-ship,
-.shop_cart_page .cart-total .total {
+.shop_cart_page .cart-total h5 {
     font-family: 'Poppins';
     font-size: 12px;
     color: var(--t-black);
-}
-
-.shop_cart_page .cart-total .shipping h4 {
-    font-family: 'Poppins';
-    font-size: 12px;
-    color: var(--t-black);
-    margin-top: 20px;
-    font-weight: normal;
 }
 
 .shop_cart_page .cart-total .shipping h3 {
     font-family: 'Poppins';
     font-size: 14px;
     color: var(--t-black);
+    padding-bottom: 8px;
 }
+
+.btn-simple {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-simple:hover {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-full {
+    background-color: var(--primary-color);
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+}
+
+.btn-full:hover {
+    background-color: #f01c23;
+    color: #fff;
+}
+
+
 
 /*--------------------------------------------------------------
 # Footer
