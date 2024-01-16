@@ -1336,12 +1336,12 @@ section {
 /*--------------------------------------------------------------
 # Shop Cart Page
 --------------------------------------------------------------*/
-.shop_cart_page #title-cart {
+#title-cart {
     margin-top: 60px;
     padding-bottom: 20px;
 }
 
-.shop_cart_page .title-cart h3 {
+.title-cart h3 {
     font-family: 'Poppins';
     font-size: 20px;
     font-weight: 500;
@@ -1360,6 +1360,7 @@ section {
 .shop_cart_page .shop-cart {
     border-radius: 8px;
     margin-right: 20px;
+    width: 70%;
 }
 
 .shop_cart_page .shop-cart .table-responsive {
@@ -1416,42 +1417,43 @@ section {
     padding-left: 20px;
 }
 
-.shop_cart_page .cart-total {
+.cart-total {
     border-radius: 8px;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     background-color: #fff;
     padding: 28px;
+    width: 35%;
 }
 
-.shop_cart_page .cart-total .titles {
+.cart-total .titles {
     border-bottom: 1px solid rgb(0, 0, 0, 6%);
     padding-bottom: 10px;
     padding-left: 0;
 }
 
-.shop_cart_page .sub-tot {
+.sub-tot {
     justify-content: space-between;
 }
 
-.shop_cart_page .cart-total .titles h4 {
+.cart-total .titles h4 {
     font-family: 'Poppins';
     font-size: 14px;
     font-weight: normal;
     color: var(--black);
 }
 
-.shop_cart_page .cart-total .body {
+.cart-total .body {
     padding: 20px 0px;
     border-bottom: 1px solid rgb(0, 0, 0, 6%);
 }
 
-.shop_cart_page .cart-total h5 {
+.cart-total h5 {
     font-family: 'Poppins';
     font-size: 12px;
     color: var(--t-black);
 }
 
-.shop_cart_page .cart-total .shipping h3 {
+.cart-total .shipping h3 {
     font-family: 'Poppins';
     font-size: 14px;
     color: var(--t-black);
@@ -1483,7 +1485,53 @@ section {
     color: #fff;
 }
 
+/*--------------------------------------------------------------
+# Checkout
+--------------------------------------------------------------*/
+.checkout .title {
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: normal;
+    color: #000;
+}
 
+.checkout .info {
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
+
+.checkout .billings-det, .checkout .order-det {
+    padding: 28px;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    border-radius: 8px;
+    border-bottom: 1px solid rgb(0, 0, 0, 6%);
+}
+
+.checkout .billings-det .title, .checkout .order-det .title {
+    border-bottom: 1px solid rgb(0, 0, 0, 6%);
+    padding-bottom: 16px;
+}
+
+.checkout .billings-det {
+    width: 70%;
+    margin-right: 20px;
+}
+
+.checkout .order-det {
+    width: 35%;
+}
+
+.checkout form {
+    margin-top: 20px;
+}
+
+.checkout form label {
+    font-size: 12px;
+    color: var(--t-black);
+    font-family: 'Poppins';
+    font-weight: normal;
+}
 
 /*--------------------------------------------------------------
 # Footer

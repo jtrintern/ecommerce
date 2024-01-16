@@ -11,7 +11,7 @@
     </section>
     <section class="detail_cart">
         <div class="container d-flex">
-            <div id="shop-cart" class="col-lg-8 shop-cart" style="padding:0;">
+            <div id="shop-cart" class="shop-cart" style="padding:0;">
                 <div class="table-responsive">
                     <table class="table table-borderless">
                         <thead>
@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div id="cart-total" class="col-lg-4 cart-total">
+            <div id="cart-total" class="cart-total">
                 <div class="col-12 titles sub-tot">
                     <h4>Cart Total</h4>
                 </div>

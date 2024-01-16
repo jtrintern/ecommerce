@@ -149,4 +149,9 @@ class ProductController extends Controller
     {
         return view('toyspace.page.shop_cart');
     }
+
+    public function checkout()
+    {
+        return view('toyspace.page.checkout');
+    }
 }
